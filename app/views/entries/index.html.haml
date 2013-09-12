@@ -1,0 +1,27 @@
+%h1 Listing entries
+
+%table
+  %tr
+    %th Physical location
+    %th Place
+    %th Mood
+    %th Took place at
+    %th Positive activity
+    %th
+    %th
+    %th
+
+  - @entries.each do |entry|
+    %tr
+      %td= entry.physical_location
+      %td= entry.place
+      %td= entry.mood
+      %td= entry.took_place_at
+      %td= entry.positive_activity
+      %td= link_to 'Show', entry
+      %td= link_to 'Edit', edit_entry_path(entry)
+      %td= link_to 'Destroy', entry, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Entry', new_entry_path

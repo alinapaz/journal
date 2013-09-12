@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Physical location:
+  = @entry.physical_location
+%p
+  %b Place:
+  = @entry.place
+%p
+  %b Mood:
+  = @entry.mood
+%p
+  %b Took place at:
+  = @entry.took_place_at
+%p
+  %b Positive activity:
+  = @entry.positive_activity
+
+= link_to 'Edit', edit_entry_path(@entry)
+\|
+= link_to 'Back', entries_path

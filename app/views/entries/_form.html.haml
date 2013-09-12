@@ -1,0 +1,25 @@
+= form_for @entry do |f|
+  - if @entry.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@entry.errors.count, "error")} prohibited this entry from being saved:"
+      %ul
+        - @entry.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :physical_location
+    = f.text_field :physical_location
+  .field
+    = f.label :place
+    = f.text_field :place
+  .field
+    = f.label :mood
+    = f.text_field :mood
+  .field
+    = f.label :took_place_at
+    = f.datetime_select :took_place_at
+  .field
+    = f.label :positive_activity
+    = f.text_field :positive_activity
+  .actions
+    = f.submit 'Save'
