@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Entry do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should have a valid factory" do
+  	FactoryGirl.build(:entry).should be_valid
+  end
 end

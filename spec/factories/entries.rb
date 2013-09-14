@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :entry do
-    physical_location "MyString"
-    place "MyString"
-    mood "MyString"
-    took_place_at "2013-09-11 21:14:17"
-    positive_activity "MyString"
+    physical_location { ['forehead', 'right temple', 'behind right ear'].sample }
+    place { ['bathroom', 'mirror', 'desk'].sample }
+    mood { ['tired', 'focused', 'annoyed'].sample }
+    took_place_at { Time.at(Time.now.to_i - [*0..86400].sample) }
+    positive_activity { Faker::Lorem.sentences(1) }
   end
 end
