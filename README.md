@@ -1,6 +1,8 @@
 journal
 =======
 
+[![Build Status](https://travis-ci.org/alinapaz/journal.png?branch=master)](https://travis-ci.org/alinapaz/journal)
+
 1. page 1 main app
   -picture of a face
     -space to click "x" or place an arrow where pulling happens
