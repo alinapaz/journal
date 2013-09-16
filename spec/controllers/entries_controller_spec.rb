@@ -18,7 +18,16 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
+describe  do
+  login_user
+end
+
 describe EntriesController do
+  before(:each) do
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    user = FactoryGirl.create(:user)
+    sign_in user
+  end
 
   # This should return the minimal set of attributes required to create a valid
   # Entry. As you add validations to Entry, be sure to
@@ -44,8 +53,8 @@ describe EntriesController do
 
   describe "GET show" do
     it "assigns the requested entry as @entry" do
-      entry = Entry.create! valid_attributes
-      get :show, {:id => entry.to_param}, valid_session
+      entry = Entry.create! valid_attributes # put an entry in the database
+      get :show, {:id => entry.id}           # call the entries_controller#show
       assigns(:entry).should eq(entry)
     end
   end
