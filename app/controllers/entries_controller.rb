@@ -25,7 +25,9 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new(entry_params)
+    params_with_user = entry_params.merge(:user_id => current_user.id)
+
+    @entry = Entry.new(params_with_user) 
 
     respond_to do |format|
       if @entry.save
