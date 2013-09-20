@@ -2,6 +2,7 @@
 
 %table
   %tr
+    %th User email  
     %th Physical location
     %th Place
     %th Mood
@@ -13,6 +14,7 @@
 
   - @entries.each do |entry|
     %tr
+      %td= entry.user.email
       %td= entry.physical_location
       %td= entry.place
       %td= entry.mood
