@@ -5,5 +5,6 @@ deploy:
   api_key:
     secure: LDPF075FAgT9g5NFErLkgS+6vt/msljtcGpOhqchl8clHDYMX3xnXcy9v9NjBVQrLDXRfSMRZNt+vwVSP2wpTfNL4KmGpIk5IP+eLwZY8veGbZuo1fpVRv2vB7FhuMFu+HQgkCsEB9I4MxB2KZyU+1kNVy5UJhb9QmWeIR9JPaY=
   app: alinapaz-journal
+  run: "rake db:migrate"
   on:
     repo: alinapaz/journal
