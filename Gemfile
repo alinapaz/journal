@@ -35,8 +35,10 @@ gem 'devise'
 group :development, :test do 
 	gem 'factory_girl_rails'
 	gem 'rspec-rails', '~>2.13.1'
-	gem 'faker'
-	
+	gem 'faker', '~> 1.1.2'
+	gem 'capybara', '~> 2.1.0'
+  gem 'database_cleaner', '~> 1.0.1'
+  gem 'launchy', '~> 2.3.0'
 	gem 'guard'
 	gem 'guard-rspec'
 	gem 'rb-fsevent'
