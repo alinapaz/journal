@@ -18,10 +18,6 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe  do
-  login_user
-end
-
 describe EntriesController do
 
   # This should return the minimal set of values that should be in the session
