@@ -6,6 +6,29 @@ feature 'user sign in' do
     # create user
   end
 
+  scenario 'multiple users sign in and view their own entries' do
+    user = FactoryGirl.create(:user)
+    user2 = FactoryGirl.create(:user)
+    user_entry = FactoryGirl.create(:entry, :user => user)
+    user2_entry = FactoryGirl.create(:entry, :user => user2)
+
+
+    # user comes to app front page
+    visit root_path
+    # user fills in email field with email
+    fill_in 'Email' , with: user.email 
+    # user fills in password field with password
+    fill_in 'Password' , with: user.password
+    # user clicks log in button
+    click_button 'Sign in'
+
+    expect(page).to have_content user_entry.positive_activity
+    expect(page).to have_no_content user2_entry.positive_activity
+
+    
+  end
+
+
   scenario 'user signs in' do 
     user = FactoryGirl.create(:user)  
 
